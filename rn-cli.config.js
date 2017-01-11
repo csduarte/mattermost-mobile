@@ -6,7 +6,10 @@ var path = require('path');
 var config = {
     getProjectRoots() {
         return [
-            path.resolve(__dirname, '.')
+            path.resolve(__dirname, '.'),
+            path.resolve(__dirname, './app'),
+            path.resolve(__dirname, './assets'),
+            path.resolve(__dirname, './service')
         ];
     }
 };
