@@ -253,16 +253,18 @@ class ChannelInfo extends PureComponent {
                 <ScrollView
                     style={style.scrollView}
                 >
-                    <ChannelInfoHeader
-                        createAt={currentChannel.create_at}
-                        creator={currentChannelCreatorName}
-                        displayName={currentChannel.display_name}
-                        header={currentChannel.header}
-                        purpose={currentChannel.purpose}
-                        status={status}
-                        theme={theme}
-                        type={currentChannel.type}
-                    />
+                    {currentChannel.hasOwnProperty('id') &&
+                        <ChannelInfoHeader
+                            createAt={currentChannel.create_at}
+                            creator={currentChannelCreatorName}
+                            displayName={currentChannel.display_name}
+                            header={currentChannel.header}
+                            purpose={currentChannel.purpose}
+                            status={status}
+                            theme={theme}
+                            type={currentChannel.type}
+                        />
+                    }
                     <View style={style.rowsContainer}>
                         <ChannelInfoRow
                             action={this.handleFavorite}
